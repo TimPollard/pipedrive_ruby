@@ -56,6 +56,10 @@ module PipedriveRuby
       custom_post(:path => "#{resource['id']}/duplicate", :params => default_param)
     end
 
+    def search(term, opts={})
+      custom_get(:path => "search/", :params => {:term => term}.merge(opts))
+    end
+
     def find(id)
       custom_get(:path => "#{id}/")
     end
